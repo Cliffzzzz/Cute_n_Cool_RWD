@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="./JS/jquery-3.7.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="CSS/share.css">
+    <title>預約流程 NOTICE</title>
+</head>
+<style>
+    .main-nav a{
+    font-family: 'Noto Sans TC';
+    display: block;
+    padding: 10px;
+    color: #1A1A1A;
+    text-decoration: none;
+}
+    .appointment_process_title{
+        margin: 10px;
+        display: flex;
+        position: relative;
+        left: 0;
+        margin: 20px 20px;
+    }
+    .appointment_process_title img{
+        width: 26px;
+        position: relative;
+        top: -20px;
+    }
+    .appointment_process_title h1{
+        margin: 0 10px;
+        font-family: 'Noto Sans TC';
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 46px;
+    }
+    .process_card_1_mobile h2{
+        font-family: 'Noto Sans TC';
+        font-weight: 900;
+        font-size: 64px;
+        line-height: 93px;
+        color: #3565AC;
+        padding: 0 10px;
+    }
+    .process_card_1_mobile h3{
+        font-family: 'Noto Sans TC';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 29px;
+        letter-spacing: 0.15em;
+        text-align: center;
+    }
+    .process_card_1_mobile{
+        /* width: 319px; */
+        min-height: 176px;
+        margin: 30px;
+        border-radius: 10px;
+        border: 3px solid #000000;
+        position: relative;
+        top: 50px;
+        background-color: white;
+    }
+    .process_card_1_mobile img{
+        position: absolute;
+        top: -110px;
+        right: 0;
+        animation: rotate 2s infinite linear;
+    }
+    @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
+    }
+
+    .process_card_2_mobile h2{
+        font-family: 'Noto Sans TC';
+        font-weight: 900;
+        font-size: 64px;
+        line-height: 93px;
+        color: #3565AC;
+        padding: 0 10px;
+    }
+    .process_card_2_mobile h3{
+        font-family: 'Noto Sans TC';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 29px;
+        letter-spacing: 0.15em;
+        text-align: center;
+    }
+    .process_card_2_mobile{
+        min-height: 176px;
+        margin: 80px 30px;
+        border-radius: 10px;
+        border: 3px solid #000000;
+        position: relative;
+        background-color: white;
+    }
+    .process_card_2_mobile img{
+        position: absolute;
+        top: -70px;
+        right: 20px;
+    }
+    .process_card_3_mobile h2{
+        font-family: 'Noto Sans TC';
+        font-weight: 900;
+        font-size: 64px;
+        line-height: 93px;
+        color: #3565AC;
+        padding: 0 10px;
+    }
+    .process_card_3_mobile h3{
+        position: absolute;
+        left: 50px;
+        top: 130px;
+        font-family: 'Noto Sans TC';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 29px;
+        letter-spacing: 0.15em;
+        /* text-align: center; */
+    }
+    .process_card_3_mobile{
+        min-height: 350px;
+        margin: 80px 30px;
+        border-radius: 10px;
+        border: 3px solid #000000;
+        position: relative;
+        top: -50px;
+        background-color: white;
+    }
+    .card_3_img_1{
+        position: absolute;
+        top: -70px;
+        right: 0;
+    }
+    .card_3_img_2{
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+    .process_card_4_mobile h2{
+        font-family: 'Noto Sans TC';
+        font-weight: 900;
+        font-size: 64px;
+        line-height: 93px;
+        color: #3565AC;
+        padding: 0 10px;
+    }
+    .process_card_4_mobile h3{
+        position: relative;
+        top: 10px;
+        font-family: 'Noto Sans TC';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 29px;
+        letter-spacing: 0.15em;
+        text-align: center;
+    }
+    .process_card_4_mobile{
+        min-height: 176px;
+        margin: 80px 30px;
+        border-radius: 10px;
+        border: 3px solid #000000;
+        position: relative;
+        top: -95px;
+        background-color: white;
+    }
+    .process_card_4_mobile img{
+        position: absolute;
+        top: -30px;
+        right: 20px;
+    }
+    .process_card_5_mobile h2{
+        font-family: 'Noto Sans TC';
+        font-weight: 900;
+        font-size: 64px;
+        line-height: 93px;
+        color: #3565AC;
+        padding: 0 10px;
+    }
+    .process_card_5_mobile h3{
+        position: absolute;
+        left: 50px;
+        font-family: 'Noto Sans TC';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 29px;
+        letter-spacing: 0.15em;
+    }
+    .process_card_5_mobile{
+        min-height: 176px;
+        margin: 80px 30px;
+        border-radius: 10px;
+        border: 3px solid #000000;
+        position: relative;
+        top: -140px;
+        background-color: white;
+    }
+    .process_card_5_mobile img{
+        position: absolute;
+        top: -30px;
+        right: 20px;
+    }
+    .shine img{
+        position: absolute;
+        top: 85px;
+        animation: shine 1s infinite;
+    }
+    @keyframes shine {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+    footer{
+        position: relative; 
+    }
+    .footer_text_zh{
+    background-color: #1A1A1A;
+    width: 85%;
+    padding: 30px;
+    position: relative;
+    bottom: -5px;
+    }
+    .notice_box_mobile{
+        border: 3px solid black;
+        padding: 10px;
+        margin: 30px;
+        position: relative;
+        top: -150px;
+        border-radius: 10px;
+        background-color: white;
+    }
+    .notice_title_mobile{
+        text-align: center;
+    }
+    .notice_list_mobile li{
+        font-size: 18px;
+        list-style: none;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        padding: 5px;
+    }
+    .notice_background_mobile{
+    background-color: #DFDFDF;
+    width: 100vw;
+    height: 620px;
+    position: absolute;
+    bottom: -1800px;
+    z-index: -1;
+    }
+    /* mobile */
+    @media screen and (max-width:768px){
+        .process_title{
+            display: none;
+        }
+        .process_container{
+            display: none;
+        }
+        .notice_container{
+            display: none;
+        }
+        .main-nav img{
+            display: none;
+        }
+    }
+    /* desktob */
+    @media screen and (min-width:769px){
+        body{
+            width: 1920px;
+        }
+        .footer_text_zh{
+            display: none;
+        }
+        .appointment_process_mobile{
+            display: none;
+        }
+        .notice_container_mobile{
+            display: none;
+        }
+        .main-nav img{
+            position: relative;
+            right: 50px;
+        }
+.process_title{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 0 80px 0;
+    position: relative;
+    top: -100px;
+    z-index: 1;
+}
+.process_title h2{
+    font-size: 36px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
+.process_title h3{
+    font-size: 24px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+}
+.process_title img{
+    width: 40px;
+    position: relative;
+    left: 830px;
+    bottom: 100px;
+    z-index: -1;
+}
+.process_container{
+    margin-bottom: 200px;
+    position: relative;
+}
+.process_container_top{
+    display: flex;
+    justify-content: center;
+}
+.triangle_right{
+    margin: 50px 20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 15px 30px;
+    border-color: transparent transparent transparent #FFAC2F;
+    position: relative;
+    /* top: 200px; */
+    animation-name: top;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes top{
+        0%{top: 0;}
+        100%{top: 30px;}
+}
+.process_card_1 h2{
+    font-size: 64px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 900;
+    padding: 0 10px;
+    color: #3565AC;
+}
+.process_card_1 h3{
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    text-align: center;
+    padding: 0px 20px 60px;
+}
+.process_card_1{
+    border: 3px solid #000000;
+    width: 320px;
+    height: 175px;
+    border-radius: 10px;
+    position: relative;
+}
+.process_card_1 img{
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+}
+.process_card_2{
+    border: 3px solid #000000;
+    width: 320px;
+    height: 175px;
+    border-radius: 10px;
+    position: relative;
+}
+.process_card_2 h2{
+    font-size: 64px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 900;
+    padding: 0 10px;
+    color: #3565AC;
+}
+.process_card_2 h3{
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    text-align: center;
+    padding: 0px 20px 60px;
+}
+.process_card_2 img{
+    position: absolute;
+    bottom: 130px;
+    left: 130px;
+}
+.process_card_3 h2{
+    font-size: 64px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 900;
+    padding: 0 10px;
+    color: #3565AC;
+}
+.process_card_3 h3{
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    padding: 0px 20px 60px;
+}
+.process_card_3{
+    border: 3px solid #000000;
+    width: 320px;
+    height: 470px;
+    border-radius: 10px;
+    position: relative;
+}
+.card_3_img_1{
+    position: absolute;
+    top: 150px;
+    left: 200px;
+}
+.card_3_img_2{
+    position: absolute;
+    top: 320px;
+    right: 130px;
+}
+.process_container_bottom{
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    left: 400px;
+}
+.process_card_4 h2{
+    font-size: 64px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 900;
+    padding: 0 10px;
+    color: #3565AC;
+}
+.process_card_4 h3{
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    text-align: center;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    padding: 0px 20px 60px;
+}
+.process_card_4{
+    border: 3px solid #000000;
+    width: 320px;
+    height: 180px;
+    border-radius: 10px;
+    position: relative;
+}
+.process_card_4 img{
+    position: absolute;
+    bottom: 130px;
+    left: 160px;
+}
+.process_card_5 h2{
+    font-size: 64px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 900;
+    padding: 0 10px;
+    color: #3565AC;
+}
+.process_card_5 h3{
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    padding: 0px 20px 60px;
+}
+.process_card_5{
+    border: 3px solid #000000;
+    width: 320px;
+    height: 180px;
+    border-radius: 10px;
+    position: relative;
+}
+.process_card_5 img{
+    position: absolute;
+    top: 150px;
+    left: 80px;
+}
+.triangle_left{
+    margin: 60px 20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 30px 15px 0;
+    border-color: transparent #FFAC2F transparent transparent;
+    position: relative;
+    animation-name: top;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.notice_title{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 40px;
+    position: relative;
+    z-index: 1;
+}
+.notice_title h2{
+    font-size: 36px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
+.notice_title h3{
+    font-size: 24px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+}
+.notice_title img{
+    width: 40px;
+    position: absolute;
+    left: 400px;
+    bottom: 45px;
+    z-index: -1;
+}
+.notice_container{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.notice_box{
+    border: 3px solid black;
+    width: 1130px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px 0;
+    margin-bottom: 200px;
+}
+.notice_list{
+    display: flex;
+    justify-content: center;
+}
+.notice_list li{
+    list-style: none;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    padding: 20px;
+}
+.notice_background{
+    background-color: #DFDFDF;
+    width: 1920px;
+    height: 620px;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+.footer_container{
+            position: relative;
+            bottom: 0px;
+            display: flex;
+            width: 1920px;
+            height: 480px;
+            z-index: 1;
+            background-color: #1A1A1A;
+        }
+.main-nav{
+    display: flex;
+    padding: 10px;
+    color: #1A1A1A;
+    text-decoration: none;
+    position: relative;
+    top: -170px;
+    left: 200px;
+    }
+.main-nav a{
+    color: #1A1A1A;
+    text-decoration: none;
+    }
+}
+</style>
+<body>
+    <div class="nav_container">
+        <input type="checkbox" name="" id="menu-switch">
+        <header class="main-header">
+            <div class="logo">
+                <a href="Cute_n'_Cool.html"><img src="IMG/LOGO/LOGO.png"></a>
+                <h1>TATTOO STUDIO</h1>
+            </div>
+        
+            <label for="menu-switch" class="hb">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="main-nav">
+                <a href="About.html"><h1>Cute n' Cool?</h1><h2>ABOUT</h2></a>
+                <a href="News.html"><h1>近期活動</h1><h2>NEWS</h2></a>
+                <a href="Artists.html"><h1>刺青師</h1><h2>ARTISTS</h2></a>
+                <a href="Product.html"><h1>店內商品</h1><h2>PRODUCT</h2></a>
+                <a href="Notice.html"><h1>預約流程</h1><h2>APPOINTMENT PROCESS</h2></a>
+                <a href="Appointment.html"><h1>預約討論</h1><h2>APPOINYMENT</h2></a>
+                <a href="login.html"><h1>登入</h1><h2>LOG IN</h2></a>
+                <a href="shopping_cart.html"><img src="IMG/CART.svg" alt=""></a>
+            </nav>
+        </header>
+    </div>
+    <!-- mobile -->
+    <div class="appointment_process_mobile">
+        <div class="appointment_process_title">
+            <img src="IMG/title.svg" alt="">
+            <h1>APPOINTMENT<br>PROCESS.</h1>
+        </div>
+        <div class="">
+            <div class="process_card_1_mobile">
+                <h2>1.</h2>
+                <h3>私訊預約討論刺青的時間</h3>
+                <img src="IMG/NOTICE_IMG/1-1.svg" alt="">
+            </div>
+            <div class="process_card_2_mobile">
+                <h2>2.</h2>
+                <h3>準備討論圖案的刺青風格</h3>
+                <img src="IMG/NOTICE_IMG/1-2.svg" alt="">
+            </div>
+            <div class="process_card_3_mobile">
+                <h2>3.</h2>
+                <h3>討論確認後<br>付訂完成刺青預約</h3>
+                <img class="card_3_img_1" src="IMG/NOTICE_IMG/1-3.svg" alt="">
+                <img class="card_3_img_2" src="IMG/NOTICE_IMG/1-4.svg" alt="">
+            </div>
+            <div class="process_card_4_mobile">
+                <h2>4.</h2>
+                <h3>刺青當天依約定時間前往</h3>
+                <img src="IMG/NOTICE_IMG/1-5.svg" alt="">
+            </div>
+            <div class="process_card_5_mobile">
+                <h2>5.</h2>
+                <h3>刺青完成後<br>確實依術後保養刺青</h3>
+                <img src="IMG/NOTICE_IMG/1-6.svg" alt="">
+                <div class="shine">
+                    <img src="IMG/NOTICE_IMG/1-7.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="notice_container_mobile">
+        <div class="notice_box_mobile">
+            <div class="notice_title_mobile">
+                <h2>注意事項</h2>
+                <h3>NOTICE</h3>
+            </div>
+            <div class="notice_list_mobile">
+                <ul>
+                    <li>- <div>我們採預約制，請先私訊預約討論時間，不提供網路報價，需現場討論報價後預約刺青時間。</div></li>
+                    <li>- <div>刺青皆須年滿18歲，因工作室空間有限討論或刺青最多一人陪同。</div></li>
+                    <li>- <div>討論刺青可以先準備想要的參考風格、圖案等資料方便討論。</div></li>
+                    <li>- <div>討論後如確定預約刺青須付訂金，訂金無法退還。</div></li>
+                    <li>- <div>刺青前一天需睡眠充足。</div></li>
+                    <li>- <div>刺青當天請穿著深色衣服，不要過量飲酒、不要空腹。</div></li>
+                    <li>- <div>刺青後請確實依照刺青術後保養步驟保養刺青。</div></li>
+                    <li>- <div>最後帶著輕鬆愉快的心情來刺青吧！！</div></li>
+                </ul>
+            </div>
+        </div>
+        <div class="notice_background_mobile"></div>
+    </div>
+    <!-- desktob -->
+    <div class="process_title">
+        <h2>預約流程</h2>
+        <h3>APPOINTMENT PROCESS</h3>
+        <img src="IMG/title.svg" alt="">
+    </div>
+    <div class="process_container">
+        <div class="process_container_top">
+            <div class="process_card_1">
+                <h2>1.</h2>
+                <h3>私訊預約討論刺青的時間</h3>
+                <img src="img/notice_img/1-1.svg" alt="">
+            </div>
+            <div class="triangle_right"></div>
+            <div class="process_card_2">
+                <h2>2.</h2>
+                <h3>準備討論圖案的刺青風格</h3>
+                <img src="img/notice_img/1-2.svg" alt="">
+            </div>
+            <div class="triangle_right"></div>
+            <div class="process_card_3">
+                <h2>3.</h2>
+                <h3>討論確認後<br>付訂完成刺青預約</h3>
+                <img class="card_3_img_1" src="img/notice_img/1-3.svg" alt="">
+                <img class="card_3_img_2" src="img/notice_img/1-4.svg" alt="">
+            </div>
+        </div>
+        <div class="process_container_bottom">
+            <div class="process_card_5">
+                <h2>5.</h2>
+                <h3>刺青完成後<br>確實依術後保養刺青</h3>
+                <img src="img/notice_img/1-6.svg" alt="">
+            </div>
+            <div class="triangle_left"></div>
+            <div class="process_card_4">
+                <h2>4.</h2>
+                <h3>刺青當天依約定時間前往</h3>
+                <img src="img/notice_img/1-5.svg" alt="">
+            </div>
+            <div class="triangle_left"></div>
+        </div>
+    </div>
+    <div class="notice_container">
+        <div class="notice_box">
+            <div class="notice_title">
+                <h2>注意事項</h2>
+                <h3>NOTICE</h3>
+                <img src="IMG/title.svg" alt="">
+            </div>
+            <div class="notice_list">
+                <ul>
+                    <li>- 我們採預約制，請先私訊預約討論時間，不提供網路報價，需現場討論報價後預約刺青時間。</li>
+                    <li>- 刺青皆須年滿18歲，因工作室空間有限討論或刺青最多一人陪同。</li>
+                    <li>- 討論刺青可以先準備想要的參考風格、圖案等資料方便討論。</li>
+                    <li>- 討論後如確定預約刺青須付訂金，訂金無法退還。</li>
+                    <li>- 刺青前一天需睡眠充足。</li>
+                    <li>- 刺青當天請穿著深色衣服，不要過量飲酒、不要空腹。</li>
+                    <li>- 刺青後請確實依照刺青術後保養步驟保養刺青。</li>
+                    <li>- 最後帶著輕鬆愉快的心情來刺青吧！！</li>
+                </ul>
+            </div>
+        </div>
+        <div class="notice_background"></div>
+    </div>
+    <footer>
+        <div class="footer_text_zh">
+            <h3>商店資訊</h3>
+            <h4>營業時間：3:00pm-8:00pm(每週三公休)<br>
+                地址：104台北市中山區中山北路一段140巷18號3樓<br>
+                聯絡電話：0939827881</h4>
+            <div class="icon">
+                <img src="IMG/FACEBOOK.png" alt="">
+                <img src="IMG/INSTAGRAM.png" alt="">
+            </div>
+        </div>
+        <div class="footer_container">
+            <div class="footer_nav">
+                <a href="About.html">ABOUT</a>
+                <a href="News.html">NEWS</a>
+                <a href="Artists.html">ARTISTS</a>
+                <a href="Product.html">PRODUCT</a>
+                <a href="Notice.html">NOTICE</a>
+                <a href="Appointment.html">APPOINMENT</a>
+            </div>
+            <div class="footer_text_conntainer_desktob">
+                <div class="footer_text_zh_desktob">
+                    <h3>商店資訊</h3>
+                    <h4>營業時間：3:00pm-8:00pm(每週三公休)<br>
+                        地址：104台北市中山區中山北路一段140巷18號3樓<br>
+                        聯絡電話：0939827881</h4>
+                </div>
+                <div class="footer_text_en_desktob">
+                    <h3>STORE INFORMATION</h3>
+                    <h4>STORE HOURS：   3:00pm-8:00pm(closed on Wednesday)<br>
+                        ADDRESS：3F,No.18,Ln.140,Sec.1,Zhongshan N. Rd,<br>
+                        Zhongshan Dist,Taipei City 104, Taiwan<br>
+                        TELEPHONE：0939827881</h4>
+                </div>
+                <div class="icon_container">
+                    <div class="facebook_icon">
+                        <img src="IMG/FACEBOOK.png" alt="">
+                    </div>
+                    <div class="instagram_icon">
+                        <img src="IMG/INSTAGRAM.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

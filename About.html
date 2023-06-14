@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/share.css">
+    <link rel="stylesheet" href="CSS/Cute_n'_Cool.css">
+    <title>關於店內 ABOUT</title>
+</head>
+<style>
+    .main-nav a{
+    font-family: 'Noto Sans TC';
+    display: block;
+    padding: 10px;
+    color: #1A1A1A;
+    text-decoration: none;
+}
+    img{
+        max-width: 100%;
+        vertical-align: middle;
+    }
+    .about_title{
+        margin: 10px;
+        display: flex;
+        position: absolute;
+        right: 0;
+    }
+    .about_title img{
+        width: 26px;
+    }
+    .about_title h1{
+        margin: 0 10px;
+        font-family: 'Noto Sans TC';
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 46px;
+    }
+    .about_video{
+        position: relative;
+        top: 70px;
+        margin: 20px 10px;
+    }
+    .about_video video{
+        width: 100%;
+    }
+    .about_img_box_first{
+        position: relative;
+    }
+    .about_img_1 img{
+        width: 50%;
+        position: absolute;
+        right: 0;
+        top: 70px;
+        margin: 0 10px;
+    }
+    .about_background_c1{
+        position: relative;
+        top: 120px;
+    }
+    .about_background_c1 img{
+        position: relative;
+        left: 30px;
+        z-index: -1;
+        width: 40%;
+    }
+    .about_text_1{
+        font-family: 'Noto Sans TC';
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 197.14%;
+        letter-spacing: 0.15em;
+        position: relative;
+        top: 80px;
+        padding: 10px;
+    }
+    .about_img_box_second{
+        position: relative;
+        top: 90px;
+    }
+    .about_img_2{
+        display: flex;
+    }
+    .about_img_2 img{
+        width: 50%;
+    }
+    .about_text_2{
+        margin: 30px 0;
+        font-family: 'Noto Sans TC';
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 197.14%;
+        letter-spacing: 0.15em;
+        padding: 10px;
+    }
+    .about_background_n{
+        width: 35%;
+        position: absolute;
+        top: 200px;
+        right: 0;
+        z-index: -1;
+    }
+    .about_img_box_third{
+        position: relative;
+        top: 95px;
+    }
+    .about_img_4 img{
+        width: 50%;
+    }
+    .about_img_4{
+        margin: 20px 0;
+        display: flex;
+    }
+    .about_background_c2{
+        position: relative;
+        bottom: 30px;
+        z-index: -1;
+    }
+    .about_background_c2 img{
+        position: relative;
+        left: 30px;
+    }
+    .footer_text_zh{
+    background-color: #1A1A1A;
+    /* width: 100%; */
+    padding: 30px;
+    position: relative;
+    top: 40px;
+    }
+    /* mobile */
+    @media screen and (max-width:768px){
+        .about_container_desktob{
+            display: none;
+        }
+        .about_img_container_desktob{
+            display: none;
+        }
+        .bottom_btn_container_desktob{
+            display: none;
+        }
+        .bottom_background_desktob{
+            display: none;
+        }
+        .main-nav img{
+            display: none;
+        }
+    }
+     /* desktob */
+    @media screen and (min-width:769px){
+        body{
+            width: 1200px;
+            max-height: 100vh;
+        }
+        .about_container{
+            display: none;
+        }
+        .about_title_box_desktob{
+            position: relative;
+            top: -600px;
+            right: -550px;
+        }
+        .about_title_video_desktob video{
+            width: 100%;
+        }
+        .about_title_desktob{
+            display: flex;
+            font-family: 'Noto Sans TC';
+            font-weight: 900;
+            font-size: 26px;
+            line-height: 52px;
+            letter-spacing: 0.2em;
+            position: absolute;
+            top: -100px;
+        }
+        .about_img_container_desktob{
+            width: 1600px;
+            position: relative;
+            top: -450px;
+        }
+        .about_img_top{
+            /* outline: solid red; */
+            position: relative;
+            left: 200px;
+            display: flex;
+        }
+        .about_img_top img{
+            width: 80%;
+        }
+        .about_img_left p{
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 230%;
+            letter-spacing: 0.2em;
+            margin: 100px 0;
+        }
+        .about_img_left img{
+            margin: 20px 0;
+        }
+        .about_img_left{
+            position: relative;
+        }
+        .about_img_right p{
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 230%;
+            letter-spacing: 0.2em;
+            margin: 30px 0;
+        }
+        .about_img_right img{
+            margin: 20px 0;
+        }
+        .about_background_c_desktob{
+            position: absolute;
+            left: 0;
+            top: 550px;
+            z-index: -1;
+        }
+        .about_background_n_desktob{
+            position: absolute;
+            right: -250px;
+            bottom: 1200px;
+            z-index: -1;
+        }
+        .about_text_bottom{
+            position: absolute;
+            bottom: 300px;
+        }
+        .about_img_bottom_box{
+            position: relative;
+            left: 200px;
+            width: 1400px;
+        }
+        .about_img_bottom_2{
+            display: flex;
+            justify-content: space-between;
+        }
+        .about_img_bottom_box img{
+            margin: 20px 0;
+        }
+        .about_background_c2_desktob{
+            position: absolute;
+            left: 350px;
+            bottom: -350px;
+            z-index: -1;
+        }
+        .btn_notice{
+            width: 802px;
+            height: 156px;
+            background-color: #DEDEDE;
+            display: flex;
+            position: relative;
+            margin: 20px;
+        }
+        .btn_notice::after{
+            content: '';
+            position: absolute;
+            background-color: #1A1A1A;
+            inset: 0;
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: 0.5s;
+        }
+        .btn_notice:hover{
+            color: white;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .btn_notice:hover::after{
+            transform: scaleX(1);
+        }
+        .btn_notice:first-child::after{
+            transform-origin: left;
+        }
+        .bottom_background_desktob{
+            position: relative;
+            bottom: 250px;
+            width: 154%;
+            z-index: -1;
+        }
+        .bottom_btn_container_desktob a{
+            text-decoration: none;
+        }
+        .bottom_btn_container_desktob{
+            display: flex;
+            position: relative;
+            left: 100px;
+            top: -650px;
+        }
+        .btn_notice h2{
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 46px;
+            letter-spacing: 0.2em;
+            position: absolute;
+            top: 55px;
+            left: 70px;
+            color: #1A1A1A;
+        }
+        .btn_notice span{
+            font-family: 'Noto Sans TC';
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 29px;
+            letter-spacing: 0.2em;
+            margin: 0 15px;
+        }
+        .btn_notice img{
+            width: 157px;
+            position: absolute;
+            top: 75px;
+            right: 70px;
+        }
+        @keyframes slide {
+            0% {
+            transform: translateX(0);
+            }
+            100% {
+            transform: translateX(15px);
+            }
+        }
+        .btn_notice:hover img{
+            animation: slide 0.5s infinite alternate;
+        }
+        .btn_appointment{
+            background-color: #F9F9F9;
+            position: relative;
+            margin: 20px;
+            display: flex;
+            width: 802px;
+            height: 156px;
+            border: 2px solid;
+            color: #1A1A1A;
+            border-radius: 0px 100px 100px 0px;
+            overflow: hidden;
+        }
+        .btn_appointment::after{
+            content: '';
+            position: absolute;
+            background-color: #1A1A1A;
+            inset: 0;
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: 0.5s;
+        }
+        .btn_appointment:hover{
+            overflow: hidden;
+            /* color: white; */
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .btn_appointment:hover::after{
+            transform: scaleX(1);
+        }
+        .btn_appointment:first-child::after{
+            transform-origin: left;
+        }
+        .btn_appointment h2{
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 46px;
+            letter-spacing: 0.2em;
+            position: relative;
+            top: 55px;
+            left: 80px;
+        }
+        .btn_appointment span{
+            font-family: 'Noto Sans TC';
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 29px;
+            letter-spacing: 0.2em;
+            margin: 0 15px;
+        }
+        .btn_appointment img{
+            width: 157px;
+            position: absolute;
+            top: 75px;
+            right: 150px;
+        }
+        @keyframes slide {
+            0% {
+            transform: translateX(0);
+            }
+            100% {
+            transform: translateX(15px);
+            }
+        }
+        .btn_appointment:hover img{
+            animation: slide 0.5s infinite alternate;
+        }
+        .footer_container{
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            width: 154%;
+            height: 480px;
+            z-index: -2;
+            background-color: #1A1A1A;
+        }
+        footer{
+            position: relative;
+        }
+        
+    }
+</style>
+<body>
+    <div class="nav_container">
+        <input type="checkbox" name="" id="menu-switch">
+        <header class="main-header">
+            <div class="logo">
+                <a href="Cute_n'_Cool.html"><img src="IMG/LOGO/LOGO.png"></a>
+                <h1>TATTOO STUDIO</h1>
+            </div>
+        
+            <label for="menu-switch" class="hb">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="main-nav">
+                <a href="About.html"><h1>Cute n' Cool?</h1><h2>ABOUT</h2></a>
+                <a href="News.html"><h1>近期活動</h1><h2>NEWS</h2></a>
+                <a href="Artists.html"><h1>刺青師</h1><h2>ARTISTS</h2></a>
+                <a href="Product.html"><h1>店內商品</h1><h2>PRODUCT</h2></a>
+                <a href="Notice.html"><h1>預約流程</h1><h2>APPOINTMENT PROCESS</h2></a>
+                <a href="Appointment.html"><h1>預約討論</h1><h2>APPOINYMENT</h2></a>
+                <a href="login.html"><h1>登入</h1><h2>LOG IN</h2></a>
+                <a href="shopping_cart.html"><img src="IMG/CART.svg" alt=""></a>
+            </nav>
+        </header>
+    </div>
+        <div class="about_container">
+            <div class="about_title">
+                <img src="IMG/title.svg" alt="">
+                <h1>ABOUT.</h1>
+            </div>
+            <div class="about_video">
+                <video src="IMG/Cute n' Cool_video.m4v" poster="IMG/ABOUT_VIDEO.png" controls></video>
+            </div>
+            <div class="about_img_container">
+                <div class="about_img_box_first">
+                    <div class="about_img_1">
+                        <img src="IMG/ABOUT_IMG/MOBILE/1-1.png" alt="">
+                    </div>
+                    <div class="about_background_c1">
+                        <img src="IMG/ABOUT_IMG/MOBILE/C.svg" alt="">
+                    </div>
+                    <div class="about_text_1">
+                        <p>想刺青卻對於一般的刺青店環境感到壓力嗎？<br>來我們這吧！以輕鬆舒適、無壓力的明亮空間為基底，<br>國際化語言溝通的刺青創作團隊，所以也深受外國人喜愛。</p>
+                    </div>
+                </div>
+                <div class="about_img_box_second">
+                    <div class="about_img_2">
+                        <img src="IMG/ABOUT_IMG/MOBILE/1-2.png" alt="">
+                        <img src="IMG/ABOUT_IMG/MOBILE/1-3.png" alt="">
+                    </div>
+                    <div class="about_text_2">
+                        <p>每月也迎接好幾組國外刺青師短期駐店，<br>喜歡收集不同刺青風格的你們，絕對不要錯過！<br>讓我們一起在這刺青宇宙裡旋轉吧！！！</p>
+                    </div>
+                    <div class="about_background_n">
+                        <img src="IMG/ABOUT_IMG/n.svg" alt="">
+                    </div>
+                </div>
+                <div class="about_img_box_third">
+                    <div class="about_img_3">
+                        <img src="IMG/ABOUT_IMG/MOBILE/1-4.png" alt="">
+                    </div>
+                    <div class="about_img_4">
+                        <img src="IMG/ABOUT_IMG/MOBILE/1-5.png" alt="">
+                        <img src="IMG/ABOUT_IMG/MOBILE/1-6.png" alt="">
+                    </div>
+                    <div class="about_background_c2">
+                        <img src="IMG/ABOUT_IMG/MOBILE/C.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+    <!-- desktob -->
+    <div class="about_container_desktob">
+        <div class="about_title_box_desktob">
+            <div class="about_title_desktob">
+                <img src="IMG/title.svg" alt="">
+                <h1>ABOUT.</h1>
+            </div>
+            <div class="about_title_video_desktob">
+                <video src="IMG/Cute n' Cool_video.m4v" poster="IMG/ABOUT_VIDEO.png" controls></video>
+            </div>
+        </div>
+    </div>
+    <div class="about_img_container_desktob">
+        <div class="about_img_top">
+            <div class="about_img_left">
+                <img src="IMG/ABOUT_IMG/1-1.png" alt="">
+                <p>想刺青卻對於一般的刺青店環境感到壓力嗎？<br>來我們這吧！以輕鬆舒適、無壓力的明亮空間為基底，<br>國際化語言溝通的刺青創作團隊，所以也深受外國人喜愛。</p>
+                <img src="IMG/ABOUT_IMG/1-2.png" alt="">
+                <img src="IMG/ABOUT_IMG/1-3.png" alt="">
+            </div>
+            <div class="about_img_right">
+                <p>"To get cute n' cool tattoo at the same time."<br>想帶給客人，輕鬆舒適的刺青空間＿</p>
+                <img src="IMG/ABOUT_IMG/1-4.png" alt="">
+                <img src="IMG/ABOUT_IMG/1-5.png" alt="">
+                <p class="about_text_bottom">每月也迎接好幾組國外刺青師短期駐店，<br>喜歡收集不同刺青風格的你們，絕對不要錯過！<br>讓我們一起在這刺青宇宙裡旋轉吧！！！</p>
+            </div>
+        </div>
+        <div class="about_img_bottom_box">
+            <div class="about_img_bottom_1">
+                <img src="IMG/ABOUT_IMG/1-6.png" alt="">
+            </div>
+            <div class="about_img_bottom_2">
+                <img src="IMG/ABOUT_IMG/1-7.png" alt="">
+                <img src="IMG/ABOUT_IMG/1-8.png" alt="">
+            </div>
+        </div>
+        <div class="about_background_c_desktob">
+            <img src="IMG/ABOUT_IMG/C.svg" alt="">
+        </div>
+        <div class="about_background_n_desktob">
+            <img src="IMG/ABOUT_IMG/n.svg" alt="">
+        </div>
+        <div class="about_background_c2_desktob">
+            <img src="IMG/ABOUT_IMG/C-2.svg" alt="">
+        </div>
+    </div>
+    <div class="bottom_background_desktob">
+        <img src="IMG/INDEX_IMG/4-6.svg" alt="">
+    </div>
+    <div class="bottom_btn_container_desktob">
+        <a href="#"><div class="btn_notice">
+            <h2>預約流程<span>APPOINTMENT PROCESS</span></h2>
+            <img src="IMG/INDEX_IMG/ARROW_BLACK.svg" alt="">
+        </div></a>
+        <a href="#"><div class="btn_appointment">
+            <h2>預約討論<span>APPOINTMENT</span></h2>
+            <img src="IMG/INDEX_IMG/ARROW_BLACK.svg" alt="">
+        </div></a>
+    </div>
+    <footer>
+        <div class="footer_text_zh">
+            <h3>商店資訊</h3>
+            <h4>營業時間：3:00pm-8:00pm(每週三公休)<br>
+                地址：104台北市中山區中山北路一段140巷18號3樓<br>
+                聯絡電話：0939827881</h4>
+            <div class="icon">
+                <img src="IMG/FACEBOOK.png" alt="">
+                <img src="IMG/INSTAGRAM.png" alt="">
+            </div>
+        </div>
+        <!-- desktob -->
+        <div class="footer_container">
+            <div class="footer_nav">
+                <a href="About.html">ABOUT</a>
+                <a href="News.html">NEWS</a>
+                <a href="Artists.html">ARTISTS</a>
+                <a href="Product.html">PRODUCT</a>
+                <a href="Notice.html">NOTICE</a>
+                <a href="Appointment.html">APPOINMENT</a>
+            </div>
+            <div class="footer_text_conntainer_desktob">
+                <div class="footer_text_zh_desktob">
+                    <h3>商店資訊</h3>
+                    <h4>營業時間：3:00pm-8:00pm(每週三公休)<br>
+                        地址：104台北市中山區中山北路一段140巷18號3樓<br>
+                        聯絡電話：0939827881</h4>
+                </div>
+                <div class="footer_text_en_desktob">
+                    <h3>STORE INFORMATION</h3>
+                    <h4>STORE HOURS：   3:00pm-8:00pm(closed on Wednesday)<br>
+                        ADDRESS：3F,No.18,Ln.140,Sec.1,Zhongshan N. Rd,<br>
+                        Zhongshan Dist,Taipei City 104, Taiwan<br>
+                        TELEPHONE：0939827881</h4>
+                </div>
+                <div class="icon_container">
+                    <div class="facebook_icon">
+                        <img src="IMG/FACEBOOK.png" alt="">
+                    </div>
+                    <div class="instagram_icon">
+                        <img src="IMG/INSTAGRAM.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

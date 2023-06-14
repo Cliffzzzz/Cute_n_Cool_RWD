@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="./JS/jquery-3.7.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="CSS/share.css">
+    <title>近期活動 NEWS</title>
+</head>
+<style>
+    .main-nav a{
+    font-family: 'Noto Sans TC';
+    display: block;
+    padding: 10px;
+    color: #1A1A1A;
+    text-decoration: none;
+}
+    img{
+        max-width: 100%;
+        vertical-align: middle;
+    }
+    .news_title_box{
+        margin: 10px;
+        display: flex;
+    }
+    .news_title{
+        display: flex;
+        position: relative;
+        left: 30px;
+    }
+    .news_title img{
+        width: 26px;
+    }
+    .news_title h1{
+        margin: 0 10px;
+        font-family: 'Noto Sans TC';
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 46px;
+    }
+    .news_title_box h2{
+        font-family: 'Noto Sans TC';
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        letter-spacing: 0.15em;
+        background-color: #3565AC;
+        color: white;
+        padding: 5px;
+        position: relative;
+        bottom: 5px;
+        left: 55px;
+    }
+    .news_img img{
+        width: 80%;
+    }
+    .news_card{
+        text-align: center;
+        position: relative;
+        margin-bottom: 120px;
+    }
+    .news_text{
+        text-align: left;
+        position: absolute;
+        left: 40px;
+        padding: 5px 0;
+    }
+    .news_text h2{
+        font-family: 'Noto Sans TC';
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 23px;
+        letter-spacing: 0.15em;
+    }
+    .news_text h4{
+        font-family: 'Noto Sans TC';
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        letter-spacing: 0.15em;
+        color: #1A1A1A;
+        padding: 5px 0;
+    }
+    .dash{
+        position: relative;
+        bottom: -100px;
+        left: 20px;
+        width: 90%;
+        border-bottom: dashed;
+    }
+    .store_news_title h2{
+        background-color: #3565AC;
+        font-family: 'Noto Sans TC';
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 17px;
+        letter-spacing: 0.15em;
+        color: #FFFFFF;
+        padding: 10px;
+        width: 110px;
+        text-align: center;
+    }
+    .store_news_title{
+        display: flex;
+        justify-content: center;
+        margin: 10px 0;
+    }
+    .store_news_card{
+        text-align: center;
+        position: relative;
+        margin-bottom: 120px;
+    }
+    .footer_text_zh{
+    background-color: #1A1A1A;
+    /* width: 100%; */
+    padding: 30px;
+    position: relative;
+    top: 40px;
+    }
+     /* mobile */
+     @media screen and (max-width:768px){
+        .news_container_desktob{
+            display: none;
+        }
+        .footer_container{
+            display: none;
+        }
+        .main-nav img{
+            display: none;
+        }
+     }
+      /* desktob */
+     @media screen and (min-width:769px){
+        .news_container{
+            display: none;
+        }
+        body{
+            width: 1200px;
+            max-height: 100vh;
+        }
+        .news_title_desktob{
+            display: flex;
+            position: absolute;
+            top: -100px;
+            left: 0px;
+            font-family: 'Noto Sans TC';
+            font-weight: 900;
+            font-size: 26px;
+            line-height: 52px;
+            letter-spacing: 0.2em;
+        }
+        .news_img_desktob{
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+        .news_title_box_desktob{
+            width: 115%;
+            position: absolute;
+            top: -600px;
+            left: 450px;
+        }
+        .news_container_desktob{
+            position: relative;
+        }
+        .news_text_box_desktob{
+            position: absolute;
+            right: 185px;
+            top: 200px;
+            z-index: 1;
+        }
+        .news_text_box_desktob h2{
+            font-family: 'Noto Sans TC';
+            font-weight: 900;
+            font-size: 36px;
+            line-height: 47px;
+            letter-spacing: 0.15em;
+            margin: 20px 0;
+        }
+        .news_text_box_desktob p{
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 210.8%;
+            letter-spacing: 0.2em;
+        }
+        .news_card_desktob{
+            width: 490px;
+            background-color: white;
+            height: 673px;
+            position: relative;
+            top: 350px;
+            left: 105px;
+            border-radius: 300px 300px 0 0;
+            padding: 20px;
+            margin: 10px;
+        }
+        .news_card_desktob:hover{
+            cursor: pointer;
+        }
+        .news_card_container_desktob{
+            width: 1800px;
+            position: absolute;
+            top:200px;
+            left:60px;
+            background-color: #F6F6F6;
+            border-radius: 0px 0px 50px 50px;
+            height: 1300px;
+        }
+        .news_card_box_desktob{
+            display: flex;
+        }
+        .card_img_desktob img{
+            width: 90%;
+        }
+        .card_img_desktob{
+            display: flex;
+            justify-content: center;
+        }
+        .card_title_desktob h2{
+            font-family: 'Noto Sans TC';
+            font-weight: 900;
+            font-size: 36px;
+            line-height: 47px;
+            text-align: center;
+            letter-spacing: 0.15em;
+        }
+        .card_title_desktob h3{
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 29px;
+            letter-spacing: 0.15em;
+            margin: 20px;
+            position: relative;
+            left: 80px;
+        }
+        .dash_desktob{
+            width: 1500px;
+            border-bottom: dashed;
+            position: relative;
+            top:150px;
+            left: 150px;
+            z-index: 1;
+        }
+        .news_card_title_desltob h3{
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 29px;
+            letter-spacing: 0.15em;
+            background-color: #3565AC;
+            color: white;
+            width: 210px;
+            padding: 20px;
+            position: relative;
+            top: 200px;
+            left: 150px;
+        }
+        .store_news_container_desktob{
+            position: relative;
+            top: 600px;
+        }
+        .store_news_title_desktob h3{
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 29px;
+            letter-spacing: 0.15em;
+            color: white;
+            background-color: #3565AC;
+            width: 120px;
+            padding: 20px;
+            position: relative;
+            left: 120px;
+        }
+        .store_news_card_desktob h3{
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 29px;
+            letter-spacing: 0.2em;
+            border: 3px solid #D9D9D9;
+            width: 757px;
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 0px 0px 15px 15px;
+        }
+        .store_news_card_desktob{
+            margin: 50px 20px;
+        }
+        .store_card_box{
+            display: flex;
+            justify-content: center;
+        }
+        .news_bottom_title_desktob{
+            display: flex;
+            /* justify-content: center; */
+            position: relative;
+            z-index: 1;
+            left: 250px;
+            top: 400px;
+            width: 120%;
+        }
+        .bottom_background_desktob{
+            width: 160%;
+            position: absolute;
+            bottom:-750px;
+            z-index: -1;
+        }
+        .bottom_background{
+            display: none;
+        }
+        .btn_notice{
+            width: 802px;
+            height: 156px;
+            background-color: #DEDEDE;
+            display: flex;
+            position: relative;
+            margin: 20px;
+        }
+        .btn_notice::after{
+            content: '';
+            position: absolute;
+            background-color: #1A1A1A;
+            inset: 0;
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: 0.5s;
+        }
+        .btn_notice:hover{
+            color: white;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .btn_notice:hover::after{
+            transform: scaleX(1);
+        }
+        .btn_notice:first-child::after{
+            transform-origin: left;
+        }
+        .bottom_btn_container_desktob a{
+            text-decoration: none;
+        }
+        .bottom_btn_container_desktob{
+            display: flex;
+            position: relative;
+            left: 100px;
+            top: 550px;
+        }
+        .btn_notice h2{
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 46px;
+            letter-spacing: 0.2em;
+            position: absolute;
+            top: 55px;
+            left: 70px;
+            color: #1A1A1A;
+        }
+        .btn_notice span{
+            font-family: 'Noto Sans TC';
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 29px;
+            letter-spacing: 0.2em;
+            margin: 0 15px;
+        }
+        .btn_notice img{
+            width: 157px;
+            position: absolute;
+            top: 75px;
+            right: 70px;
+        }
+        @keyframes slide {
+            0% {
+            transform: translateX(0);
+            }
+            100% {
+            transform: translateX(15px);
+            }
+        }
+        .btn_notice:hover img{
+            animation: slide 0.5s infinite alternate;
+        }
+        .btn_appointment{
+            background-color: #F9F9F9;
+            position: relative;
+            margin: 20px;
+            display: flex;
+            width: 802px;
+            height: 156px;
+            border: 2px solid;
+            color: #1A1A1A;
+            border-radius: 0px 100px 100px 0px;
+            overflow: hidden;
+        }
+        .btn_appointment::after{
+            content: '';
+            position: absolute;
+            background-color: #1A1A1A;
+            inset: 0;
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: 0.5s;
+        }
+        .btn_appointment:hover{
+            overflow: hidden;
+            /* color: white; */
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .btn_appointment:hover::after{
+            transform: scaleX(1);
+        }
+        .btn_appointment:first-child::after{
+            transform-origin: left;
+        }
+        .btn_appointment h2{
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 46px;
+            letter-spacing: 0.2em;
+            position: relative;
+            top: 55px;
+            left: 80px;
+        }
+        .btn_appointment span{
+            font-family: 'Noto Sans TC';
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 29px;
+            letter-spacing: 0.2em;
+            margin: 0 15px;
+        }
+        .btn_appointment img{
+            width: 157px;
+            position: absolute;
+            top: 75px;
+            right: 150px;
+        }
+        @keyframes slide {
+            0% {
+            transform: translateX(0);
+            }
+            100% {
+            transform: translateX(15px);
+            }
+        }
+        .btn_appointment:hover img{
+            animation: slide 0.5s infinite alternate;
+        }
+        .bottom_container_desktob{
+            position: relative;
+            top: 2000px;
+        }
+        .footer_container{
+            position: relative;
+            top: 2710px;
+            display: flex;
+            width: 160%;
+            height: 480px;
+            z-index: -2;
+            background-color: #1A1A1A;
+        }
+        footer{
+            position: relative;
+            bottom: 0;
+        }
+     }
+
+</style>
+<body>
+    <div class="nav_container">
+        <input type="checkbox" name="" id="menu-switch">
+        <header class="main-header">
+            <div class="logo">
+                <a href="Cute_n'_Cool.html"><img src="IMG/LOGO/LOGO.png"></a>
+                <h1>TATTOO STUDIO</h1>
+            </div>
+        
+            <label for="menu-switch" class="hb">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="main-nav">
+                <a href="About.html"><h1>Cute n' Cool?</h1><h2>ABOUT</h2></a>
+                <a href="News.html"><h1>近期活動</h1><h2>NEWS</h2></a>
+                <a href="Artists.html"><h1>刺青師</h1><h2>ARTISTS</h2></a>
+                <a href="Product.html"><h1>店內商品</h1><h2>PRODUCT</h2></a>
+                <a href="Notice.html"><h1>預約流程</h1><h2>APPOINTMENT PROCESS</h2></a>
+                <a href="Appointment.html"><h1>預約討論</h1><h2>APPOINYMENT</h2></a>
+                <a href="login.html"><h1>登入</h1><h2>LOG IN</h2></a>
+                <a href="shopping_cart.html"><img src="IMG/CART.svg" alt=""></a>
+            </nav>
+        </header>
+    </div>
+    <div class="news_container">
+        <div class="news_title_box">
+            <div class="news_title">
+                <img src="IMG/title.svg" alt="">
+                <h1>NEWS.</h1>
+            </div>
+            <h2>收集各種刺青風格！<br>短期駐店國外刺青師</h2>
+        </div>
+        <div class="news_card_container">
+            <div class="news_card">
+                <div class="news_img"><img src="IMG/NEWS_IMG/MOBILE/1-3.png" alt=""></div>
+                <div class="news_text">
+                    <h2>2023/0511-0516</h2>
+                    <h4>來自韓國<br>超COOL彩色美式風格刺青師<span>@3.jinnn</span></h4>
+                </div>
+                <div class="dash"></div>
+            </div>
+            <div class="news_card">
+                <div class="news_img"><img src="IMG/NEWS_IMG/MOBILE/1-2.png" alt=""></div>
+                <div class="news_text">
+                    <h2>2023/0426-0428</h2>
+                    <h4>來自香港<br>花圖騰和黑白感風格刺青師<span>@krisauau</span></h4>
+                </div>
+                <div class="dash"></div>
+            </div>
+            <div class="news_card">
+                <div class="news_img"><img src="IMG/NEWS_IMG/MOBILE/1-1.png" alt=""></div>
+                <div class="news_text">
+                    <h2>2023/0411-0425</h2>
+                    <h4>來自韓國<span>@kickkie.tt</span><br>超Q療癒感爆棚風格！你有看過嗎？</h4>
+                </div>
+                <div class="dash"></div>
+            </div>
+        </div>
+        <div class="store_news_container">
+            <div class="store_news_title">
+                <h2>店內消息！</h2>
+            </div>
+            <div class="store_news_card">
+                <div class="news_img"><img src="IMG/NEWS_IMG/MOBILE/1-4.png" alt=""></div>
+                <div class="news_text">
+                    <h4>專屬長期刺青計畫＿歡迎預約討論！</h4>
+                </div>
+                <div class="dash"></div>
+            </div>
+            <div class="store_news_card">
+                <div class="news_img"><img src="IMG/NEWS_IMG/MOBILE/1-5.png" alt=""></div>
+                <div class="news_text">
+                    <h2>2023/0825-0827</h2>
+                    <h4>前往香港，刺青展我們來了！</h4>
+                </div>
+                <div class="dash"></div>
+            </div>
+        </div>
+    </div>
+    <!-- desktob -->
+    <div class="news_container_desktob">
+        <div class="news_title_box_desktob">
+            <div class="news_title_desktob">
+                <img src="IMG/title.svg" alt="">
+                <h1>NEWS.</h1>
+            </div>
+            <div class="news_text_box_desktob" id="newsTextBox">
+                <h2>2023<br>0619-0629</h2>
+                <p>來自韓國刺青師<span>@xamofromseoul</span><br>好玩怪奇的刺青風格一定要來收集一枚刺青喔！<br>預約空位有限，請提早預約卡位！</p>
+            </div>
+            <div class="news_img_desktob" id="newsImgBox">
+                <img src="IMG/NEWS_IMG/1-1.png" alt="">
+            </div>
+        </div>
+        <div class="news_card_container_desktob">
+            <div class="dash_desktob"></div>
+            <div class="news_card_title_desltob">
+                <h3>收集各種刺青風格！<br>短期駐店國外刺青師</h3>
+            </div>
+            <div class="news_card_box_desktob">
+                <div class="news_card_desktob">
+                    <div class="card_title_desktob">
+                        <h2>2023<br>0511-0516</h2>
+                        <h3>來自韓國<span>@3.jinnn</span><br>超COOL彩色美式風格刺青師</h3>
+                    </div>
+                    <div class="card_img_desktob">
+                        <img src="IMG/INDEX_IMG/4-1.png" alt="">
+                    </div>
+                </div>
+                <div class="news_card_desktob">
+                    <div class="card_title_desktob">
+                        <h2>2023<br>0426-0428</h2>
+                        <h3>來自香港<span>@krisauau</span><br>花圖騰和黑白感風格刺青師</h3>
+                    </div>
+                    <div class="card_img_desktob">
+                        <img src="IMG/INDEX_IMG/4-2.png" alt="">
+                    </div>
+                </div>
+                <div class="news_card_desktob">
+                    <div class="card_title_desktob">
+                        <h2>2023<br>0411-0425</h2>
+                        <h3>來自韓國<span>@kickkie.tt</span><br>超Q療癒感爆棚風格！你有看過嗎？</h3>
+                    </div>
+                    <div class="card_img_desktob">
+                        <img src="IMG/INDEX_IMG/4-3.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="store_news_container_desktob">
+                <div class="store_news_title_desktob">
+                    <h3>店內消息！</h3>
+                </div>
+                <div class="store_card_box">
+                    <div class="store_card_box_desktob">
+                        <div class="store_news_card_desktob">
+                            <img src="IMG/NEWS_IMG/2-1.png" alt="">
+                            <h3>專屬長期刺青計畫＿歡迎預約討論！</h3>
+                        </div>
+                    </div>
+                    <div class="store_card_box_desktob">
+                        <div class="store_news_card_desktob">
+                            <img src="IMG/NEWS_IMG/2-2.png" alt="">
+                            <h3>前往香港，刺青展我們來了！</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_container_desktob">
+            <div class="news_bottom_title_desktob">
+                <img src="IMG/NEWS_IMG/2-3.svg" alt="">
+            </div>
+            <div class="bottom_background_desktob">
+                <img src="IMG/INDEX_IMG/4-6.svg" alt="">
+            </div>
+            <div class="bottom_btn_container_desktob">
+                <a href="#"><div class="btn_notice">
+                    <h2>預約流程<span>APPOINTMENT PROCESS</span></h2>
+                    <img src="IMG/INDEX_IMG/ARROW_BLACK.svg" alt="">
+                </div></a>
+                <a href="#"><div class="btn_appointment">
+                    <h2>預約討論<span>APPOINTMENT</span></h2>
+                    <img src="IMG/INDEX_IMG/ARROW_BLACK.svg" alt="">
+                </div></a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_text_zh">
+            <h3>商店資訊</h3>
+            <h4>營業時間：3:00pm-8:00pm(每週三公休)<br>
+                地址：104台北市中山區中山北路一段140巷18號3樓<br>
+                聯絡電話：0939827881</h4>
+            <div class="icon">
+                <img src="IMG/FACEBOOK.png" alt="">
+                <img src="IMG/INSTAGRAM.png" alt="">
+            </div>
+        </div>
+        <!-- desktob -->
+        <div class="footer_container">
+            <div class="footer_nav">
+                <a href="About.html">ABOUT</a>
+                <a href="News.html">NEWS</a>
+                <a href="Artists.html">ARTISTS</a>
+                <a href="Product.html">PRODUCT</a>
+                <a href="Notice.html">NOTICE</a>
+                <a href="Appointment.html">APPOINMENT</a>
+            </div>
+            <div class="footer_text_conntainer_desktob">
+                <div class="footer_text_zh_desktob">
+                    <h3>商店資訊</h3>
+                    <h4>營業時間：3:00pm-8:00pm(每週三公休)<br>
+                        地址：104台北市中山區中山北路一段140巷18號3樓<br>
+                        聯絡電話：0939827881</h4>
+                </div>
+                <div class="footer_text_en_desktob">
+                    <h3>STORE INFORMATION</h3>
+                    <h4>STORE HOURS：   3:00pm-8:00pm(closed on Wednesday)<br>
+                        ADDRESS：3F,No.18,Ln.140,Sec.1,Zhongshan N. Rd,<br>
+                        Zhongshan Dist,Taipei City 104, Taiwan<br>
+                        TELEPHONE：0939827881</h4>
+                </div>
+                <div class="icon_container">
+                    <div class="facebook_icon">
+                        <img src="IMG/FACEBOOK.png" alt="">
+                    </div>
+                    <div class="instagram_icon">
+                        <img src="IMG/INSTAGRAM.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

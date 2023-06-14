@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="./JS/jquery-3.7.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="CSS/share.css">
+    <title>預約討論 APPOINTMENT</title>
+</head>
+<style>
+    .appointment_list h4{
+        color: #1A1A1A;
+        font-size: 20px;
+        font-family: 'Noto Sans TC';
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0.15em;
+    }
+    .appointment_item h5{
+        color: #1A1A1A;
+        font-size: 16px;
+        font-family: 'Noto Sans TC';
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0.15em;
+        text-align: center;
+    }
+    input{
+        width: 100%;
+        height: 48px;
+        font-size: 20px;
+        padding: 0 10px;
+        border-radius: 10px;
+    }
+    .appointment_title_mobile{
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .appointment_title_mobile img{
+        width: 26px;
+        position: relative;
+        top: 0px;
+        z-index: -1;
+    }
+    .appointment_item{
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .choose_button input{
+        width: 60%;
+    }
+    .choose_button{
+        display: flex;
+        justify-content: center;
+    }
+    .submit_button button{
+        background-color: #3565AC;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 20px;
+        border-radius: 10px;
+        letter-spacing: 0.15em;
+    }
+    .submit_button{
+        display: flex;
+        justify-content: center;
+        margin: 22px;
+    }
+    .submit_button:hover{
+        cursor: pointer;
+
+    }
+    footer{
+        position: relative; 
+    }
+    .footer_text_zh{
+    background-color: #1A1A1A;
+    width: 87%;
+    padding: 30px;
+    position: relative;
+    bottom: -40px;
+    }    
+    .tattoo_man img{
+        width: 25%;
+        transform: rotate(-15deg);
+        position: absolute;
+        z-index: 1;
+        bottom: 160px;
+        right: 20px;
+    }
+    /* mobile */
+    @media screen and (max-width:768px){
+        .background{
+            display: none;
+        }
+        .appointment_title{
+            display: none;
+        }
+        .main-nav a{
+            display: block;
+            color: #1A1A1A;
+            text-decoration: none;
+            margin: 20px;
+            font-family: 'Noto Sans TC';
+        }
+        .main-nav img{
+            display: none;
+        }
+    }
+    /* desktob */
+    @media screen and (min-width:769px){
+        body{
+            width: 1920px;
+        }
+        .appointment_title_mobile{
+            display: none;
+        }
+        .main-nav img{
+            position: relative;
+            right: 50px;
+        }
+        .appointment_title{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    top: -50px;
+    z-index: 1;
+}
+.appointment_title h2{
+    font-size: 36px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
+.appointment_title h3{
+    font-size: 24px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+}
+.appointment_title img{
+    width: 40px;
+    position: relative;
+    left: 835px;
+    bottom: 95px;
+    z-index: -1;
+}
+.main-nav{
+    display: flex;
+    padding: 10px;
+    color: #1A1A1A;
+    text-decoration: none;
+    position: relative;
+    top: -170px;
+    left: 250px;
+    }
+.main-nav a{
+    color: #1A1A1A;
+    text-decoration: none;
+}
+    input{
+        width: 320px;
+        height: 48px;
+        font-size: 20px;
+        padding: 0 10px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .appointment_list h4{
+        font-size: 26px;
+        margin: 10px 0;
+    }
+    .appointment_item h5{
+        font-size: 24px;
+        margin: 10px 0;
+    }
+    .appointment_container{
+    display: flex;
+    justify-content: center;
+    }
+    .submit_button button{
+    background-color: #3565AC;
+    border: none;
+    color: white;
+    margin: 50px;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 10px 40px;
+    border-radius: 10px;
+    letter-spacing: 0.15em;
+}
+.submit_button button:hover{
+    background-color: #FFAC2F;
+    cursor: pointer;
+}
+.submit_button{
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+.tattoo_man{
+        width: 60%;
+        position: absolute;
+        z-index: 3;
+        bottom: 100px;
+        right: 280px;
+    }
+    .background_desktob{
+        position: relative;
+    }
+    .background{
+        position: absolute;
+        bottom: -300px;
+        left: 350px;
+        z-index: -2;
+    }
+    .footer_container{
+            position: relative;
+            bottom: 0px;
+            display: flex;
+            width: 1920px;
+            height: 480px;
+            z-index: 1;
+            background-color: #1A1A1A;
+        }
+}
+</style>
+<body>
+    <div class="nav_container">
+        <input type="checkbox" name="" id="menu-switch">
+        <header class="main-header">
+            <div class="logo">
+                <a href="Cute_n'_Cool.html"><img src="IMG/LOGO/LOGO.png"></a>
+                <h1>TATTOO STUDIO</h1>
+            </div>
+        
+            <label for="menu-switch" class="hb">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="main-nav">
+                <a href="About.html"><h1>Cute n' Cool?</h1><h2>ABOUT</h2></a>
+                <a href="News.html"><h1>近期活動</h1><h2>NEWS</h2></a>
+                <a href="Artists.html"><h1>刺青師</h1><h2>ARTISTS</h2></a>
+                <a href="Product.html"><h1>店內商品</h1><h2>PRODUCT</h2></a>
+                <a href="Notice.html"><h1>預約流程</h1><h2>APPOINTMENT PROCESS</h2></a>
+                <a href="Appointment.html"><h1>預約討論</h1><h2>APPOINYMENT</h2></a>
+                <a href="login.html"><h1>登入</h1><h2>LOG IN</h2></a>
+                <a href="shopping_cart.html"><img src="IMG/CART.svg" alt=""></a>
+            </nav>
+        </header>
+    </div>
+    <!-- mobile -->
+    <div class="appointment_title_mobile">
+        <img src="IMG/title.svg" alt="">
+        <h1>APPOINTMENT.</h1>
+    </div>
+    <!-- desktob -->
+    <div class="appointment_title">
+        <h2>預約討論</h2>
+        <h3>APPOINTMENT</h3>
+        <img src="IMG/title.svg" alt="">
+    </div>
+    <div class="appointment_container">
+        <div class="appointment_list">
+            <div class="appointment_item">
+                <label>
+                    <h4>日期 / 時間</h4>
+                    <input type="text">
+                </label>
+            </div>
+            <div class="appointment_item">
+                <label>
+                    <h4>姓名</h4>
+                    <input type="text">
+                </label>
+            </div>
+            <div class="appointment_item">
+                <label>
+                    <h4>手機號碼</h4>
+                    <input type="text">
+                </label>
+            </div>
+            <div class="appointment_item">
+                <h5>想刺青的風格類型<br>(接受的檔案格式：JPG、PDF、PNG)</h5>
+            </div>
+            <div class="choose_button">
+                <input type="file">
+            </div>
+            <div class="submit_button">
+                <button type="submit">送出</button>
+            </div>
+        </div>
+    </div>
+    <div class="background_desktob">
+        <div class="background">
+        <img src="IMG/APPOINTMENT_IMG/1-2.png" alt=""></div>
+        <div class="tattoo_man">
+        <img src="IMG/APPOINTMENT_IMG/1-1.png" alt="">
+        </div>
+    </div>
+    <footer>
+        <div class="footer_text_zh">
+            <h3>商店資訊</h3>
+            <h4>營業時間：3:00pm-8:00pm(每週三公休)<br>
+                地址：104台北市中山區中山北路一段140巷18號3樓<br>
+                聯絡電話：0939827881</h4>
+            <div class="icon">
+                <img src="IMG/FACEBOOK.png" alt="">
+                <img src="IMG/INSTAGRAM.png" alt="">
+            </div>
+        </div>
+        <div class="footer_container">
+            <div class="footer_nav">
+                <a href="About.html">ABOUT</a>
+                <a href="News.html">NEWS</a>
+                <a href="Artists.html">ARTISTS</a>
+                <a href="Product.html">PRODUCT</a>
+                <a href="Notice.html">NOTICE</a>
+                <a href="Appointment.html">APPOINMENT</a>
+            </div>
+            <div class="footer_text_conntainer_desktob">
+                <div class="footer_text_zh_desktob">
+                    <h3>商店資訊</h3>
+                    <h4>營業時間：3:00pm-8:00pm(每週三公休)<br>
+                        地址：104台北市中山區中山北路一段140巷18號3樓<br>
+                        聯絡電話：0939827881</h4>
+                </div>
+                <div class="footer_text_en_desktob">
+                    <h3>STORE INFORMATION</h3>
+                    <h4>STORE HOURS：   3:00pm-8:00pm(closed on Wednesday)<br>
+                        ADDRESS：3F,No.18,Ln.140,Sec.1,Zhongshan N. Rd,<br>
+                        Zhongshan Dist,Taipei City 104, Taiwan<br>
+                        TELEPHONE：0939827881</h4>
+                </div>
+                <div class="icon_container">
+                    <div class="facebook_icon">
+                        <img src="IMG/FACEBOOK.png" alt="">
+                    </div>
+                    <div class="instagram_icon">
+                        <img src="IMG/INSTAGRAM.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

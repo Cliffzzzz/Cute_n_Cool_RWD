@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>付款資訊 CHECKOUT</title>
+</head>
+<style>
+            *{
+    margin: 0;
+    padding: 0;
+    /* outline: solid red; */
+}
+body{
+    width: 1920px;
+}
+header{
+    background-color: white;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+/* .header_container{
+    width: 1920px;
+    background-color: rgb(203, 203, 203);
+    padding: 30px 0;
+} */
+.menu_list_logo img{
+    width: 64px;
+    display: block;
+}
+.menu li{
+    list-style: none;
+}
+nav a{
+    font-family: 'Noto Sans TC', sans-serif;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+.menu_list_left{
+    display: flex;
+    padding: 20px 50px;
+}
+.menu_list_left li{
+    padding: 20px 30px 20px 30px;
+}
+.menu_list_right{
+    display: flex;
+    padding: 20px 120px;
+}
+.menu_list_right li{
+    text-align: center;
+    padding: 20px;
+}
+.menu_list_logo{
+    margin: auto;
+}
+.cart_icon{
+    padding: 20px 10px;
+}
+nav h3{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+.checkout_title{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 0 20px 0;
+    position: relative;
+}
+.checkout_title h2{
+    font-size: 36px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
+.checkout_title h3{
+    font-size: 24px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+}
+.checkout_title img{
+    width: 40px;
+    position: absolute;
+    left: 860px;
+    bottom: 70px;
+    z-index: -1;
+}
+.checkout_container{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 200px 0;
+}
+.checkout_step_box{
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #000000;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 1395px;
+    height: 720px;
+    position: relative;
+}
+.checkout_container h2{
+    font-family: 'Noto Sans CJK TC';
+    font-weight: 900;
+    font-size: 64px;
+    color: #3565AC;
+    text-align: center;
+}
+.checkout_container h4{
+    font-family: 'Noto Sans CJK TC';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    padding: 10px 0;
+}
+.checkout_step{
+    margin: 50px;
+}
+.checkout_step input{
+    width: 320px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 24px;
+}
+.select_store button{
+    font-family: 'Noto Sans CJK TC';
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    color: white;
+    background: #BABABA;
+    border: 3px solid #000000;
+    box-shadow: inset 5px 5px 4px #FFFFFF;
+    border-radius: 10px;
+    width: 135px;
+    height: 50px;
+    cursor: pointer;
+}
+.submit_button button{
+    background: #3565AC;
+    border-radius: 10px;
+    font-family: 'Noto Sans CJK TC';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.15em;
+    color: #FFFFFF;
+    width: 145px;
+    height: 65px;
+    position: absolute;
+    bottom: 60px;
+    right: 630px;
+    border-style: none;
+}
+.submit_button button:hover{
+    cursor: pointer;
+    background-color: #FFAC2F;
+}
+.decorative_line_left{
+    position: relative;
+    top: -250px;
+    left: -20px;
+}
+.circle_left{
+    width: 35px;
+    height: 35px;
+    background: #3565AC;
+    border-radius: 999em;
+    position: absolute;
+    left: 85px;
+    bottom: 70px;
+}
+.line_left{
+    width: 265px;
+    border: 1px solid #000000;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 80px;
+    left: -30px;
+}
+.lightning{
+    position: absolute;
+    top: 10px;
+    left: 85px;
+}
+.line_right{
+    width: 265px;
+    border: 1px solid #000000;
+    transform: rotate(90deg);
+    position: absolute;
+    right: -40px;
+    bottom: 150px;
+}
+.circle_right{
+    width: 35px;
+    height: 35px;
+    background: #3565AC;
+    border-radius: 999em;
+    position: absolute;
+    right: 75px;
+}
+.decorative_line_right{
+    position: relative;
+    top: -250px;
+}
+.text_right{
+    transform: rotate(90deg);
+    font-family: 'Noto Sans CJK TC';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.4em;
+    position: absolute;
+    right: -100px;
+    bottom: 500px;
+}
+/* .background_circle{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: -600px;
+    z-index: -1;
+} */
+.footer_container{
+    background-color: #DFDFDF;
+    padding: 60px;
+    }
+.store_information_box{
+    display: flex;
+    }
+.footer_container h3{
+    font-family: 'Noto Sans TC';
+    font-size: 24px;
+    padding: 20px 10px 40px 10px;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    }
+.footer_container h4{
+    font-family: 'Noto Sans TC';
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    line-height: 40px;
+    }
+.store_zh{
+    padding: 10px 20px 10px ;
+    width: 600px;
+    }
+.store_en{
+    padding: 10px 20px 10px ;
+    width: 800px;
+}
+.footer_container span{
+    font-weight: 500;
+}
+.footer_icon{
+    display: flex;
+    justify-content: right;
+    position: relative;
+    bottom: 300px;
+}
+.footer_link{
+    display: flex;
+    margin-left: auto;
+}
+.footer_link li{
+    list-style: none;
+    padding: 0 10px;
+}
+.footer_link a{
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+}
+.footer_link_box{
+    display: flex;
+}
+.menu_list_left li::after{
+    content:" ";
+    display:block; 
+    width: 0%;
+    height: 1px;
+    background-color: black;
+    transition: .4s .2s;
+}
+.menu_list_left li:hover::after{
+    width: 100%;
+}
+.menu_list_right li::after{
+    content:" ";
+    display:block; 
+    width: 0%;
+    height: 1px;
+    background-color: black;
+    transition: .4s .2s;
+}
+.menu_list_right li:hover::after{
+    width: 100%;
+}
+</style>
+<body>
+    
+    <header>
+        <div class="header_container">
+            <div class="menu">
+                <nav>
+                    <ul class="menu_list_left">
+                        <li><a href="About.html">Cute n' Cool?<h3>ABOUT</h3></a></li>
+                        <li><a href="News.html">近期活動<h3>NEWS</h3></a></li>
+                        <li><a href="Artists.html">刺青師<h3>ARTIST</h3></a></li>
+                        <li><a href="Product.html">店內商品<h3>PRODUCT</h3></a></li>
+                    </ul>
+                    <div class="menu_list_logo">
+                        <a href="Cute_n'_Cool.html"><img src="IMG/LOGO/LOGO.png" alt=""></a>
+                    </div>
+                    <ul class="menu_list_right">
+                        <li><a href="Notice.html">預約流程<h3>APPOINTMENT<br>PROCESS</h3></a>
+                        </li>
+                        <li><a href="Appointment.html">預約討論<h3>APPOINTMENT</h3></a></li>
+                        <div class="cart_icon">
+                            <a href="shopping_cart.html"><img src="IMG/CART.svg" alt=""></a>
+                        </div>
+                        <li><a href="login.html">登入<h3>LOG IN</h3></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="checkout_title">
+        <h2>付款資訊</h2>
+        <h3>CHECKOUT</h3>
+        <img src="IMG/title.svg" alt="">
+    </div>
+    <div class="checkout_container">
+        <div class="checkout_step_box">
+            <div class="checkout_step">
+                <h2>1.</h2>
+                <label>
+                    <h4>收件人姓名</h4>
+                    <input type="text">
+                </label>
+                <label>
+                    <h4>手機號碼</h4>
+                    <input type="text">
+                </label>
+                <label>
+                    <h4>Email</h4>
+                    <input type="text">
+                </label>
+            </div>
+            <div class="checkout_step">
+                <h2>2.</h2>
+                <h4>運送方式</h4>
+                <form>
+                    <select name="delivery">
+                        <option value="store_711">7-11店到店+$65
+                        </option>
+                        <option value="home">宅配+$130</option>
+                    </select>
+                </form>
+                <h4>總金額共：$</h4>
+                <div class="select_store"><button>選擇門市</button></div>
+                <label>
+                    <h4>運送地址</h4>
+                    <input type="text">
+                </label>
+            </div>
+            <div class="checkout_step">
+                <h2>3.</h2>
+                    <h4>付款資訊</h4>
+                    <form>
+                        <select name="delivery">
+                            <option value="store_711">信用卡
+                            </option>
+                            <option value="home">貨到付款</option>
+                        </select>
+                    </form>
+                <label>
+                    <h4>信用卡號</h4>
+                    <input type="text">
+                </label>
+                <label>
+                    <h4>到期日</h4>
+                    <input type="text">
+                </label>
+                <label>
+                    <h4>安全碼</h4>
+                    <input type="text">
+                </label>
+            </div>
+            <div class="submit_button">
+                <button type="submit">確認</button>
+            </div>
+        </div>
+    </div>
+    <div class="background">
+        <div class="decorative_line_left">
+            <div class="circle_left"></div>
+            <div class="line_left"></div>
+            <div class="lightning">
+                <img src="IMG/CHECKOUT_IMG/1-1.svg" alt="">
+            </div>
+        </div>
+        <div class="decorative_line_right">
+            <div class="text_right">
+                <h4>Drawing with no limits.</h4>
+            </div>
+            <div class="line_right"></div>
+            <div class="circle_right"></div>
+        </div>
+    </div>
+    <!-- <div class="background_circle">
+        <img src="img/checkout_img/1-2.png" alt="">
+    </div> -->
+    <footer>
+        <div class="footer_container">
+            <div class="store_information_box">
+                <div class="store_zh">
+                    <h3>商店資訊</h3>
+                    <h4><span>營業時間：</span>3:00pm-8:00pm(每週三公休)</h4>
+                    <h4><span>地址：</span>104台北市中山區中山北路一段140巷18號3樓</h4>
+                    <h4><span>聯絡電話：</span>0939-827881</h4>
+                </div>
+                <div class="store_en">
+                    <h3>STORE INFORMATION</h3>
+                    <h4><span>STORE HOURS：</span>3:00pm-8:00pm(closed on Wednesday)</h4>
+                    <h4><span>ADDRESS：</span>3F,No.18,Ln.140,Sec.1,Zhongshan N. Rd,<br>Zhongshan Dist,Taipei City 104, Taiwan</h4>
+                    <h4><span>TELEPHONE：</span>0939-827881</h4>
+                </div>
+            </div>
+            <div class="footer_icon">
+                <img src="IMG/facebook_icon.png" alt="">
+                <img src="IMG/instagram_icon.png" alt="">
+            </div>
+            <div class="footer_link_box">
+                <ul class="footer_link">
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="news.html">NEWS</a></li>
+                    <li><a href="artist.html">ARTIST</a></li>
+                    <li><a href="product.html">PRODUCT</a></li>
+                    <li><a href="notice.html">NOTICE</a></li>
+                    <li><a href="appointment.html">APPOINTMENT</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

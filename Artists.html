@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/share.css">
+    <title>本店刺青師 ARTISTS</title>
+</head>
+<style>
+    .main-nav a{
+    font-family: 'Noto Sans TC';
+    display: block;
+    padding: 10px;
+    color: #1A1A1A;
+    text-decoration: none;
+}
+    img{
+        max-width: 100%;
+        vertical-align: middle;
+    }
+    .artists_title_mobile{
+        display: flex;
+        position: relative;
+        justify-content: center;
+    }
+    .artists_title_mobile img{
+        width: 26px;
+    }
+    .artists_title_mobile h1{
+        font-family: 'Noto Sans TC';
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 46px;
+    }
+    .artists_card_mobile{
+        display: flex;
+        margin: 40px 0;
+        position: relative;
+        /* right: 15px; */
+    }
+    .artists_card_mobile img{
+        width: 100%;
+        /* position: relative; */
+    }
+    .artists_name_mobile h2{
+        font-family: 'Noto Sans TC';
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 46px;
+        position: relative;
+        left: 40px;
+        top: 220px;
+        color: #1a1a1a;
+    }
+    .artists_card_container_mobile{
+        position: relative;
+        right: 10px;
+    }
+    .artists_card_container_mobile a{
+        text-decoration: none;
+    }
+    .footer_text_zh{
+    background-color: #1A1A1A;
+    /* width: 100%; */
+    padding: 30px;
+    position: relative;
+    top: 40px;
+    }
+     /* mobile */
+    @media screen and (max-width:768px){
+        .artist_title{
+            display: none;
+        }
+        .tab_css{
+            display: none;
+        }
+        .bottom_container_desktob{
+            display: none;
+        }
+        .main-nav img{
+            display: none;
+        }
+    }
+    /* desktob */
+    @media screen and (min-width:769px){
+        body{
+            width: 1920px;
+            max-height: 100vh;
+        }
+    .artists_container_mobile{
+        display: none;
+    }
+    .artist_title{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 0 50px 0;
+    position: relative;
+    top: -100px;
+    z-index: 1;
+}
+.artist_title h2{
+    font-size: 36px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
+.artist_title h3{
+    font-size: 24px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+}
+.artist_title img{
+    width: 40px;
+    position: absolute;
+    left: 820px;
+    bottom: 100px;
+    z-index: -1;
+}
+.artist_tab_container{
+    display: flex;
+    justify-content: center;
+}
+.job{
+    writing-mode: vertical-lr;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.artist_text{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.artist_text h4{
+    font-family: 'Noto Sans CJK TC';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.15em;
+    padding: 5px 15px;
+    color: #1A1A1A;
+}
+.artist_name h2{
+    font-family: 'Noto Sans CJK TC';
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: 0.15em;
+    margin: 18px 0;
+}
+.introduce_text{
+    display: flex;
+    padding: 20px 20px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    position: relative;
+}
+.job h4{
+    font-family: 'Noto Sans CJK TC';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.15em;
+    color: #1A1A1A;
+}
+.tab1_box{
+    width: 90%;
+    position: relative;
+    margin: 30px;
+}
+.tab1_background{
+    width: 100%;
+    position: relative;
+    z-index: -1;
+}
+.introduce_box{
+    width: 90%;
+    position: absolute;
+    top: 25px;
+    left: 30px;
+}
+.artist_img{
+    width: 20%;
+    display: flex;
+    margin: auto;
+    padding: 10px;
+}
+.tattoo_img_box{
+    width: 1020px;
+    position: relative;
+}
+.tattoo_img_box img{
+    transition: 0.5s ease-in-out;
+    filter: grayscale(100%);
+    margin: 5px;
+}
+.tattoo_img_box img:hover{
+    transition: 1s;
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+.square{
+    position: absolute;
+    z-index: -1;
+    top: -80px;
+    left: 300px;
+}
+.nimo_tattoo_img_box{
+    width: 1200px;
+    position: relative;
+    left: 80px;
+}
+.nimo_tattoo_img img{
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 5px;
+}
+.tab_css{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.tab_css input{
+    display:none
+}
+.tab_css label{
+    opacity: 0.6;
+    cursor: pointer; 
+}
+.tab_content{
+    position: relative;
+    order:1;
+    display: none; 
+    width:100%;
+    margin: 100px 0; 
+}
+.footer_text_zh{
+    display: none;
+}
+.tab_css input:checked + label, .tab_css label:hover{
+    opacity: 1; 
+}
+.tab_css input:checked + label + .tab_content{
+    display: flex;
+    justify-content: center;
+}
+.footer_container{
+            position: relative;
+            top: 500px;
+            display: flex;
+            width: 1920px;
+            height: 480px;
+            z-index: -2;
+            background-color: #1A1A1A;
+        }
+        .news_bottom_title_desktob{
+            display: flex;
+            justify-content: center;
+        }
+        .news_bottom_title_desktob img{
+            position: relative;
+            z-index: 1;
+            top: 400px;
+            width: 90%;
+        }
+        .bottom_background_desktob{
+            position: absolute;
+            bottom:-750px;
+            z-index: -1;
+        }
+        .bottom_background_desktob img{
+            width: 100%;
+        }
+        .bottom_background{
+            display: none;
+        }
+        .btn_notice{
+            width: 802px;
+            height: 156px;
+            background-color: #DEDEDE;
+            display: flex;
+            position: relative;
+            margin: 20px;
+        }
+        .btn_notice::after{
+            content: '';
+            position: absolute;
+            background-color: #1A1A1A;
+            inset: 0;
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: 0.5s;
+        }
+        .btn_notice:hover{
+            color: white;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .btn_notice:hover::after{
+            transform: scaleX(1);
+        }
+        .btn_notice:first-child::after{
+            transform-origin: left;
+        }
+        .bottom_btn_container_desktob a{
+            text-decoration: none;
+        }
+        .bottom_btn_container_desktob{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            top: 550px;
+            z-index: 1;
+        }
+        .btn_notice h2{
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 46px;
+            letter-spacing: 0.2em;
+            position: absolute;
+            top: 55px;
+            left: 70px;
+            color: #1A1A1A;
+        }
+        .btn_notice span{
+            font-family: 'Noto Sans TC';
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 29px;
+            letter-spacing: 0.2em;
+            margin: 0 15px;
+        }
+        .btn_notice img{
+            width: 157px;
+            position: absolute;
+            top: 75px;
+            right: 70px;
+        }
+        @keyframes slide {
+            0% {
+            transform: translateX(0);
+            }
+            100% {
+            transform: translateX(15px);
+            }
+        }
+        .btn_notice:hover img{
+            animation: slide 0.5s infinite alternate;
+        }
+        .btn_appointment{
+            background-color: #F9F9F9;
+            position: relative;
+            margin: 20px;
+            display: flex;
+            width: 802px;
+            height: 156px;
+            border: 2px solid;
+            color: #1A1A1A;
+            border-radius: 0px 100px 100px 0px;
+            overflow: hidden;
+        }
+        .btn_appointment::after{
+            content: '';
+            position: absolute;
+            background-color: #1A1A1A;
+            inset: 0;
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: 0.5s;
+        }
+        .btn_appointment:hover{
+            overflow: hidden;
+            /* color: white; */
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .btn_appointment:hover::after{
+            transform: scaleX(1);
+        }
+        .btn_appointment:first-child::after{
+            transform-origin: left;
+        }
+        .btn_appointment h2{
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 46px;
+            letter-spacing: 0.2em;
+            position: relative;
+            top: 55px;
+            left: 80px;
+        }
+        .btn_appointment span{
+            font-family: 'Noto Sans TC';
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 29px;
+            letter-spacing: 0.2em;
+            margin: 0 15px;
+        }
+        .btn_appointment img{
+            width: 157px;
+            position: absolute;
+            top: 75px;
+            right: 150px;
+        }
+        @keyframes slide {
+            0% {
+            transform: translateX(0);
+            }
+            100% {
+            transform: translateX(15px);
+            }
+        }
+        .btn_appointment:hover img{
+            animation: slide 0.5s infinite alternate;
+        }
+        .bottom_container_desktob{
+            position: relative;
+            top: -210px;
+        }
+        footer{
+            position: relative;
+            bottom: 0;
+        }
+        .main-nav{
+    display: flex;
+    padding: 10px;
+    color: #1A1A1A;
+    text-decoration: none;
+    position: relative;
+    top: -170px;
+    left: 200px;
+    }
+.main-nav a{
+    color: #1A1A1A;
+    text-decoration: none;
+    }
+}
+</style>
+<body>
+    <div class="nav_container">
+        <input type="checkbox" name="" id="menu-switch">
+        <header class="main-header">
+            <div class="logo">
+                <a href="Cute_n'_Cool.html"><img src="IMG/LOGO/LOGO.png"></a>
+                <h1>TATTOO STUDIO</h1>
+            </div>
+        
+            <label for="menu-switch" class="hb">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="main-nav">
+                <a href="About.html"><h1>Cute n' Cool?</h1><h2>ABOUT</h2></a>
+                <a href="News.html"><h1>近期活動</h1><h2>NEWS</h2></a>
+                <a href="Artists.html"><h1>刺青師</h1><h2>ARTISTS</h2></a>
+                <a href="Product.html"><h1>店內商品</h1><h2>PRODUCT</h2></a>
+                <a href="Notice.html"><h1>預約流程</h1><h2>APPOINTMENT PROCESS</h2></a>
+                <a href="Appointment.html"><h1>預約討論</h1><h2>APPOINYMENT</h2></a>
+                <a href="login.html"><h1>登入</h1><h2>LOG IN</h2></a>
+                <a href="shopping_cart.html"><img src="IMG/CART.svg" alt=""></a>
+            </nav>
+        </header>
+    </div>
+    <!-- mobile -->
+    <div class="artists_container_mobile">
+        <div class="artists_title_mobile">
+            <img src="IMG/title.svg" alt="">
+            <h1>ARTISTS.</h1>
+        </div>
+        <div class="artists_card_container_mobile">
+            <a href="#">
+                <div class="artists_card_mobile">
+                    <div class="artists_name_mobile">
+                        <h2>1.JONES</h2>
+                    </div>
+                    <div class="artists_work_box_mobile">
+                        <img src="IMG/ARTISTS_IMG/MOBILE/1-1.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="artists_card_mobile">
+                    <div class="artists_name_mobile">
+                        <h2>2.EMMA</h2>
+                    </div>
+                    <div class="artists_work_box_mobile">
+                        <img src="IMG/ARTISTS_IMG/MOBILE/1-2.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="artists_card_mobile">
+                    <div class="artists_name_mobile">
+                        <h2>3.NIMO</h2>
+                    </div>
+                    <div class="artists_work_box_mobile">
+                        <img src="IMG/ARTISTS_IMG/MOBILE/1-3.png" alt="">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- desktob -->
+    <div class="artist_title">
+        <h2>本店刺青師</h2>
+        <h3>ARTIST</h3>
+        <img src="IMG/title.svg" alt="">
+    </div>
+    <div class="tab_css">
+        <input id="tab1" type="radio" name="tab" checked="checked"/>
+        <label for="tab1">
+            <div class="tab1_box">
+                <div class="tab1_background">
+                    <img src="IMG/ARTISTS_IMG/JONES/1-1-1.svg" alt="">
+                    <div class="introduce_box">
+                        <div class="introduce_text">
+                            <div class="job">
+                                <h4>刺青師</h4>
+                            </div>
+                            <div class="artist_img">
+                                <img src="IMG/ARTISTS_IMG/JONES/1-1.png" alt="">
+                            </div>
+                            <div class="artist_text">
+                                <h4>#OLD SCHOOL</h4>
+                                <h4>#黑白風格刺青</h4>
+                                <h4>#可客製刺青</h4>
+                            </div>
+                            <div class="ig_icon">
+                                <img src="IMG/ARTISTS_IMG/ig_icon.png" alt="">
+                            </div>
+                        </div>
+                        <div class="artist_name">
+                            <h2>JONES</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </label>
+        <div class="tab_content">
+            <div class="tattoo_img_box">  
+                <img src="IMG/ARTISTS_IMG/JONES/1-2.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-3.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-4.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-5.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-6.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-7.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-8.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-9.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-10.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-11.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-12.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-13.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-14.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-15.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-16.png" alt="">
+                <img src="IMG/ARTISTS_IMG/JONES/1-17.png" alt="">
+            </div>
+            <div class="square">
+                <img src="IMG/ARTISTS_IMG/JONES/1-1-3.svg" alt="">
+            </div>
+        </div>
+    
+        <input id="tab2" type="radio" name="tab"/>
+        <label for="tab2">
+            <div class="tab1_box">
+                <div class="tab1_background">
+                    <img src="IMG/ARTISTS_IMG/EMMA/2-1-1.svg" alt="">
+                    <div class="introduce_box">
+                        <div class="introduce_text">
+                            <div class="job">
+                                <h4>刺青師</h4>
+                            </div>
+                            <div class="artist_img">
+                                <img src="IMG/ARTISTS_IMG/EMMA/2-1.png" alt="">
+                            </div>
+                            <div class="artist_text">
+                                <h4>#高彩度色塊刺青</h4>
+                                <h4>#無客製刺青</h4>
+                            </div>
+                            <div class="ig_icon">
+                                <img src="IMG/ARTISTS_IMG/ig_icon.png" alt="">
+                            </div>
+                        </div>
+                        <div class="artist_name">
+                            <h2>EMMA</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </label>
+        <div class="tab_content">
+            <div class="tattoo_img_box">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-2.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-3.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-4.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-5.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-6.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-7.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-8.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-9.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-10.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-11.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-12.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-13.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-14.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-15.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-16.png" alt="">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-17.png" alt="">
+            </div>
+            <div class="square">
+                <img src="IMG/ARTISTS_IMG/EMMA/2-1-3.svg" alt="">
+            </div>
+        </div>
+    
+        <input id="tab3" type="radio" name="tab"/>
+        <label for="tab3">
+            <div class="tab1_box">
+                <div class="tab1_background">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-1-1.svg" alt="">
+                    <div class="introduce_box">
+                        <div class="introduce_text">
+                            <div class="job">
+                                <h4>魔法學徒</h4>
+                            </div>
+                            <div class="artist_img">
+                                <img src="IMG/ARTISTS_IMG/NIMO/3-1.png" alt="">
+                            </div>
+                            <div class="artist_text">
+                                <h4>#黑白素描刺青</h4>
+                                <h4>#可客製刺青</h4>
+                            </div>
+                            <div class="ig_icon">
+                                <img src="IMG/ARTISTS_IMG/ig_icon.png" alt="">
+                            </div>
+                        </div>
+                        <div class="artist_name">
+                            <h2>NIMO</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </label>
+        <div class="tab_content">
+            <div class="nimo_tattoo_img_box">
+                <div class="nimo_tattoo_img">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-2.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-3.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-4.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-5.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-6.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-7.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-8.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-9.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-10.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-11.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-12.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-13.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-14.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-15.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-16.png" alt="">
+                    <img src="IMG/ARTISTS_IMG/NIMO/3-17.png" alt="">
+                </div>
+            </div>
+            <div class="square">
+                <img src="IMG/ARTISTS_IMG/NIMO/3-1-3.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="bottom_container_desktob">
+        <div class="news_bottom_title_desktob">
+            <img src="IMG/NEWS_IMG/2-3.svg" alt="">
+        </div>
+        <div class="bottom_background_desktob">
+            <img src="IMG/INDEX_IMG/4-6.svg" alt="">
+        </div>
+        <div class="bottom_btn_container_desktob">
+            <a href="#"><div class="btn_notice">
+                <h2>預約流程<span>APPOINTMENT PROCESS</span></h2>
+                <img src="IMG/INDEX_IMG/ARROW_BLACK.svg" alt="">
+            </div></a>
+            <a href="#"><div class="btn_appointment">
+                <h2>預約討論<span>APPOINTMENT</span></h2>
+                <img src="IMG/INDEX_IMG/ARROW_BLACK.svg" alt="">
+            </div></a>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_text_zh">
+            <h3>商店資訊</h3>
+            <h4>營業時間：3:00pm-8:00pm(每週三公休)<br>
+                地址：104台北市中山區中山北路一段140巷18號3樓<br>
+                聯絡電話：0939827881</h4>
+            <div class="icon">
+                <img src="IMG/FACEBOOK.png" alt="">
+                <img src="IMG/INSTAGRAM.png" alt="">
+            </div>
+        </div>
+        <!-- desktob -->
+        <div class="footer_container">
+            <div class="footer_nav">
+                <a href="About.html">ABOUT</a>
+                <a href="News.html">NEWS</a>
+                <a href="Artists.html">ARTISTS</a>
+                <a href="Product.html">PRODUCT</a>
+                <a href="Notice.html">NOTICE</a>
+                <a href="Appointment.html">APPOINMENT</a>
+            </div>
+            <div class="footer_text_conntainer_desktob">
+                <div class="footer_text_zh_desktob">
+                    <h3>商店資訊</h3>
+                    <h4>營業時間：3:00pm-8:00pm(每週三公休)<br>
+                        地址：104台北市中山區中山北路一段140巷18號3樓<br>
+                        聯絡電話：0939827881</h4>
+                </div>
+                <div class="footer_text_en_desktob">
+                    <h3>STORE INFORMATION</h3>
+                    <h4>STORE HOURS：   3:00pm-8:00pm(closed on Wednesday)<br>
+                        ADDRESS：3F,No.18,Ln.140,Sec.1,Zhongshan N. Rd,<br>
+                        Zhongshan Dist,Taipei City 104, Taiwan<br>
+                        TELEPHONE：0939827881</h4>
+                </div>
+                <div class="icon_container">
+                    <div class="facebook_icon">
+                        <img src="IMG/FACEBOOK.png" alt="">
+                    </div>
+                    <div class="instagram_icon">
+                        <img src="IMG/INSTAGRAM.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

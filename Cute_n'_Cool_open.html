@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/share.css">
+    <title>Welcome to Cute n' Cool !</title>
+</head>
+<style>
+    .open_logo_mobile{
+        position: relative;
+    }
+    .open_logo_mobile img{
+        width: 35%;
+        margin: auto;
+        position: absolute;
+        /* justify-content: center; */
+        left: 0px;
+        right: 0px;
+        top: 400px;
+        bottom: 0px;
+        z-index: 1;
+    }
+    .logo_title_mobile{
+        position: a;
+    }
+    .logo_title_mobile h1{
+        font-family: 'Noto Sans TC';
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 490px;
+    }
+    .logo_shine_mobile img{
+        width: 65%;
+        z-index: -1;
+        position: absolute;
+        top: 420px;
+        animation: shine 1s ease-in-out infinite;
+    }
+    @keyframes shine {
+        0% { opacity: 0.2; }
+        50% { opacity: 1; }
+        100% { opacity: 0.2; }
+    }
+    /* mobile */
+    @media screen and (max-width:768px){
+        .container{
+            display: none;
+        }
+    }
+    /* desktob */
+    @media screen and (min-width:769px){
+        .container_mobile{
+            display: none;
+        }
+        body{
+        width: 1920px;
+    }
+    .container{
+        width: 1920px;
+        height: 1080px;
+        position: relative;
+    }
+    .open_logo img{
+        width: 204px;
+        height: 231px;
+        position: absolute;
+        margin: auto;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px; 
+    }
+    .eyes img{
+        width: 105px;
+        height: 80px;
+        animation: blink 1s infinite;
+    }
+    .eyes a{
+        padding: 30px;
+    }
+    .eyes{
+        position: absolute;
+        top: 620px;
+        left: 910px;
+    }
+    .open_logo a:hover{
+        cursor: url(IMG/OPEN_IMG/1-4.cur), auto;
+    }
+
+    @keyframes blink {
+        0% {
+        opacity: 1;
+        }
+        50% {
+        opacity: 0;
+        }
+        100% {
+        opacity: 1;
+        }
+    }
+    body{
+        cursor: url(img/open_img/1-4.cur), auto;
+    }
+    }
+
+</style>
+<body>
+    <!-- mobile -->
+    <div class="container_mobile">
+        <div class="open_logo_mobile">
+            <a href="Cute_n'_Cool.html"><img src="IMG/LOGO/LOGO.png" alt="Cute n' Cool-logo"></a>
+            <div class="logo_title_mobile">
+                <h1>TATTOO STUDIO</h1>
+            </div>
+            <div class="logo_shine_mobile">
+                <img src="IMG/LOGO/shine.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- desktob -->
+    <div class="container">
+        <div class="open_logo">
+            <img src="IMG/OPEN_IMG/1-1.svg" alt="Cute n' Cool-logo">
+            <div class="eyes">
+                <a href="Cute_n'_Cool.html"><img src="IMG/OPEN_IMG/1-2.svg" alt=""></a>
+            </div>
+            </a>
+        </div>
+    </div>
+    
+</body>
+<script>
+    //鼠標觸碰眼睛
+    let eyes = document.querySelector('.eyes');
+    eyes.addEventListener('mouseenter', function() {
+    let link = document.querySelector('.eyes a');
+    
+      link.click();
+    });
+    
+    </script>
+</html>
